@@ -9,7 +9,7 @@
 
 @implementation GDPView
 
-#pragma mark - 初始化&设置
+#pragma mark - Init & Setup
 
 /** used when call -init or -initWithFrame: */
 - (instancetype)initWithFrame:(CGRect)frame {
@@ -36,7 +36,7 @@
     /* Add contentView as subview */
     [self addSubview:_contentView];
     /* Layout */
-    [self layoutView:_contentView];
+    [self layoutViewWithZeroMargins:_contentView];
     
     /* setup */
     [self setup];
@@ -46,18 +46,19 @@
     
 }
 
-- (void)layoutView:(UIView *)view {
+#pragma mark - Layout
+
+- (void)layoutViewWithZeroMargins:(UIView *)view {
+    view.translatesAutoresizingMaskIntoConstraints = NO;
     NSDictionary *views = NSDictionaryOfVariableBindings(view);
-    NSArray<NSString *> *formatStrings = @[@"|-[view]-|", @"V:|-[view]-|"];
+    NSArray<NSString *> *formatStrings = @[@"|-0-[view]-0-|", @"V:|-0-[view]-0-|"];
     for (NSString *formatString in formatStrings) {
         NSArray<NSLayoutConstraint *> *constraints =
         [NSLayoutConstraint constraintsWithVisualFormat:formatString
-                                                options:NSLayoutFormatAlignAllTop
+                                                options:0
                                                 metrics:nil
                                                   views:views];
-        for (NSLayoutConstraint *constraint in constraints) {
-            constraint.active = YES;
-        }
+        [NSLayoutConstraint activateConstraints:constraints];
     }
 }
 
@@ -65,7 +66,7 @@
 
 - (void)addToSuperview:(UIView *)superview {
     [superview addSubview:self];
-    [self layoutView:self];
+    [self layoutViewWithZeroMargins:self];
 }
 
 @end

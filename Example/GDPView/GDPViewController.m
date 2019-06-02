@@ -25,8 +25,15 @@
 }
 
 - (void)setupDemoView {
-    GDPDemoView *demoView = [[GDPDemoView alloc] initWithFrame:CGRectMake(50, 128 + 50 + 20, 150, 150)];
+    // setup demoview from xib
+    _demoViewInXib.backgroundColor = UIColor.greenColor;
+    _demoViewInXib.contentView.backgroundColor = [UIColor.purpleColor colorWithAlphaComponent:0.5];
+    // init by code
+    CGFloat screenWidth = UIScreen.mainScreen.bounds.size.width;
+    CGFloat screenHeight = UIScreen.mainScreen.bounds.size.height;
+    GDPDemoView *demoView = [[GDPDemoView alloc] initWithFrame:CGRectMake(50, screenHeight / 2, screenWidth - 60, screenHeight / 2 - 10)];
     demoView.detail = @"GDPDemoView, Init by code!";
+    demoView.contentView.backgroundColor = UIColor.redColor;
     [self.view addSubview:demoView];
 }
 
