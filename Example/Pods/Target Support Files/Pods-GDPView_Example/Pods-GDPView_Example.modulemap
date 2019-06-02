@@ -1,0 +1,6 @@
+framework module Pods_GDPView_Example {
+  umbrella header "Pods-GDPView_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

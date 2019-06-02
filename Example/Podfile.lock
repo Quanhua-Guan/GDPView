@@ -1,0 +1,23 @@
+PODS:
+  - GDPView (0.1.0)
+  - Kiwi (3.0.0)
+
+DEPENDENCIES:
+  - GDPView (from `../`)
+  - Kiwi
+
+SPEC REPOS:
+  https://mirrors.tuna.tsinghua.edu.cn/git/cocoapods/specs.git:
+    - Kiwi
+
+EXTERNAL SOURCES:
+  GDPView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  GDPView: 8afd9c9982e3648ad1e07f6cced99c73aaf84931
+  Kiwi: fbeafef0f00e4d8f7dcb3420a4930afe70af77f7
+
+PODFILE CHECKSUM: a39a54fefa8c5e92c2ec8266c28c2d4caf4257e8
+
+COCOAPODS: 1.6.1

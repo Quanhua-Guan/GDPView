@@ -1,0 +1,6 @@
+framework module GDPView {
+  umbrella header "GDPView-umbrella.h"
+
+  export *
+  module * { export * }
+}
