@@ -1,0 +1,19 @@
+source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
+source 'https://git.huanleguang.com/gaodingios/GDSpecs.git'
+
+use_frameworks!
+
+# Disable sending stats
+ENV['COCOAPODS_DISABLE_STATS'] = 'true'
+
+platform :ios, '8.0'
+
+target 'GDPView_Example' do
+  pod 'GDPView', :path => '../'
+
+  target 'GDPView_Tests' do
+    inherit! :search_paths
+
+    pod 'Kiwi'
+  end
+end
