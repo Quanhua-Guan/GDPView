@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'GDPView'
   s.version          = '0.1.0'
-  s.summary          = 'It's GDPView.'
+  s.summary          = 'Its GDPView.'
 
   s.description      = <<-DESC
   Help you customize your view!

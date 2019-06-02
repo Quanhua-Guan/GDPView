@@ -9,15 +9,15 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 ### 1. Create a customized view : GDPDemoView
-[GDPDemoView.h](./GDPDemoView.h) 
-[GDPDemoView.m](./GDPDemoView.m)
-[GDPDemoView.xib](./GDPDemoView.xib)
+[GDPDemoView.h](https://github.com/Quanhua-Guan/GDPView/blob/master/Example/GDPView/GDPDemoView.h) 
+[GDPDemoView.m](https://github.com/Quanhua-Guan/GDPView/blob/master/Example/GDPView/GDPDemoView.m)
+[GDPDemoView.xib](https://github.com/Quanhua-Guan/GDPView/blob/master/Example/GDPView/GDPDemoView.xib)
 ### 2. Go to `GDPDemoView.xib`, set `File's Owner` as `GDPDemoView` class.  
 
-![1. files owner set to gdpdemoview](./images/1. files owner set to gdpdemoview.png)
+![1. files owner set to gdpdemoview](https://github.com/Quanhua-Guan/GDPView/blob/master/images/1.%20files%20owner%20set%20to%20gdpdemoview.png)
 
 ### 3. Link `File's Owner`'s `contentView` to the view in `GDPDemoView.xib`.
-![2. link contentView of files owner to the view in the xib](./images/2. link contentView of files owner to the view in the xib.png)
+![2. link contentView of files owner to the view in the xib](https://github.com/Quanhua-Guan/GDPView/blob/master/images/2.%20link%20contentView%20of%20files%20owner%20to%20the%20view%20in%20the%20xib.png)
 
 ### 4. Do what event you want in the xib file .... (Yeah)
 
@@ -30,7 +30,10 @@ demoView.contentView.backgroundColor = UIColor.redColor;
 [self.view addSubview:demoView];
 ```
 #### (2) In Xib/Storyboard
-![use in xib](./images/use in xib.png)
+![use in xib](https://github.com/Quanhua-Guan/GDPView/blob/master/images/use%20in%20xib.png)
+
+###  6. Snapshots
+![snapshot1](https://github.com/Quanhua-Guan/GDPView/blob/master/images/snapshot1.png)
 
 ## Requirements
 iOS 8+
