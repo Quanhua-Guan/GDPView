@@ -7,8 +7,11 @@
 //
 
 #import "GDPViewController.h"
+#import "GDPDemoView.h"
 
 @interface GDPViewController ()
+
+@property (weak, nonatomic) IBOutlet GDPDemoView *demoViewInXib;
 
 @end
 
@@ -17,7 +20,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    [self setupDemoView];
+}
+
+- (void)setupDemoView {
+    GDPDemoView *demoView = [[GDPDemoView alloc] initWithFrame:CGRectMake(50, 128 + 50 + 20, 150, 150)];
+    demoView.detail = @"GDPDemoView, Init by code!";
+    [self.view addSubview:demoView];
 }
 
 - (void)didReceiveMemoryWarning

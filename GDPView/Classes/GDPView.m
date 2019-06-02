@@ -6,7 +6,6 @@
 //
 
 #import "GDPView.h"
-#import <Masonry/Masonry.h>
 
 @implementation GDPView
 
@@ -31,14 +30,14 @@
 }
 
 - (void)initiateFromNib {
-    /* 从xib文件中初始化子视图 */
+    /* Init contentView from Xib */
     NSBundle *bundle = [NSBundle bundleForClass:self.class];
     [bundle loadNibNamed:NSStringFromClass(self.class) owner:self options:nil];
-    /* 将contentView添加为自己的子视图 */
-    [self addSubview:self.contentView];
-    [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self);
-    }];
+    /* Add contentView as subview */
+    [self addSubview:_contentView];
+    /* Layout */
+    [self layoutView:_contentView];
+    
     /* setup */
     [self setup];
 }
@@ -47,13 +46,26 @@
     
 }
 
+- (void)layoutView:(UIView *)view {
+    NSDictionary *views = NSDictionaryOfVariableBindings(view);
+    NSArray<NSString *> *formatStrings = @[@"|-[view]-|", @"V:|-[view]-|"];
+    for (NSString *formatString in formatStrings) {
+        NSArray<NSLayoutConstraint *> *constraints =
+        [NSLayoutConstraint constraintsWithVisualFormat:formatString
+                                                options:NSLayoutFormatAlignAllTop
+                                                metrics:nil
+                                                  views:views];
+        for (NSLayoutConstraint *constraint in constraints) {
+            constraint.active = YES;
+        }
+    }
+}
+
 #pragma mark - Add to super view
 
 - (void)addToSuperview:(UIView *)superview {
     [superview addSubview:self];
-    [self mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(superview);
-    }];
+    [self layoutView:self];
 }
 
 @end
