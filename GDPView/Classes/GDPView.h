@@ -30,6 +30,12 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)addToSuperview:(UIView *)superview;
 
+/**
+ 获取视图对应 xib 资源所在的 NSBundle, 子类可重写该类返回自定义的 NSBundle 实例.
+ 注意: 该方法默认实现返回 [NSBundle bundleForClass:self.class];
+ */
+- (NSBundle *)xibBundle;
+
 @end
 
 NS_ASSUME_NONNULL_END

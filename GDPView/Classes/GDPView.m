@@ -29,9 +29,13 @@
     return self;
 }
 
+- (NSBundle *)xibBundle {
+    return [NSBundle bundleForClass:self.class];
+}
+
 - (void)initiateFromNib {
     /* Init contentView from Xib */
-    NSBundle *bundle = [NSBundle bundleForClass:self.class];
+    NSBundle *bundle = self.xibBundle;
     [bundle loadNibNamed:NSStringFromClass(self.class) owner:self options:nil];
     /* Add contentView as subview */
     [self addSubview:_contentView];
