@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'GDPView'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.summary          = 'Its GDPView.'
 
   s.description      = <<-DESC
@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   s.author           = { 'yuyuan' => 'yuyuan@gaoding.com' }
   s.source           = { :git => 'https://github.com/Quanhua-Guan/GDPView.git', :tag => s.version.to_s }
   
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
   s.source_files = 'GDPView/Classes/**/*'
   
   # s.resource_bundles = {
